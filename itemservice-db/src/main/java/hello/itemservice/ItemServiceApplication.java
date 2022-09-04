@@ -2,6 +2,7 @@ package hello.itemservice;
 
 import hello.itemservice.config.JpaConfig;
 import hello.itemservice.config.MyBatisConfig;
+import hello.itemservice.config.QuerydslConfig;
 import hello.itemservice.config.SpringDataJpaConfig;
 import hello.itemservice.repository.ItemRepository;
 import hello.itemservice.repository.jpa.SpringDataJpaItemRepository;
@@ -21,7 +22,8 @@ import javax.sql.DataSource;
 //@Import(JdbcTemplateV2Config.class)
 //@Import(JdbcTemplateV3Config.class)
 //@Import(MyBatisConfig.class)
-@Import(SpringDataJpaConfig.class)
+//@Import(SpringDataJpaConfig.class)
+@Import(QuerydslConfig.class)
 @Slf4j
 @SpringBootApplication(scanBasePackages = "hello.itemservice.web")
 public class ItemServiceApplication {
