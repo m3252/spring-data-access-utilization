@@ -25,6 +25,7 @@ buildSrc/build
 /framework-bom/build
 /integration-tests/build
 /src/asciidoc/build
+/src/main/generated
 target/
 
 # Eclipse artifacts, including WTP generated manifests
