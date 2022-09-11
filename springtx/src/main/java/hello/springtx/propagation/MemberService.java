@@ -4,6 +4,10 @@ import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
+import javax.transaction.Transactional;
+
+import static org.springframework.transaction.annotation.Propagation.REQUIRES_NEW;
+
 @Slf4j
 @Service
 @RequiredArgsConstructor
@@ -11,6 +15,7 @@ public class MemberService {
     private final MemberRepository memberRepository;
     private final LogRepository logRepository;
 
+    @Transactional
     public void joinV1(String username) {
         Member member = new Member(username);
         Log logMessage = new Log(username);
@@ -24,6 +29,7 @@ public class MemberService {
         log.info("== logRepository 호출 종료 ==");
     }
 
+    @Transactional
     public void joinV2(String username) {
         Member member = new Member(username);
         Log logMessage = new Log(username);
